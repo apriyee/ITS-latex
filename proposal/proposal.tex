@@ -1,0 +1,30 @@
+% Template penulisan proposal tesis
+
+\documentclass[12pt, a4paper, openright]{scrbook}
+
+\usepackage{proposal}
+\input{setting}
+
+\begin{document}
+
+\putpdf{../pics/master_sampul_luar}
+
+\blankpage
+
+\putpdf{../pics/master_sampul_dalam}
+
+\pagenumbering{roman}
+
+\addChapter{Lembar Pengesahan}
+\include{pengesahan}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\pagenumbering{arabic}
+\include{bab1}
+\include{bab2}
+\include{bab3}
+\include{pustaka}
+
+\end{document}
