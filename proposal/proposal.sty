@@ -32,7 +32,6 @@
 \usepackage{graphicx}
 
 \usepackage{setspace}
-    \onehalfspacing{}
 
 \usepackage[paper=a4paper,headheight=0pt,top=3.5cm,bottom=3cm,left=4cm,right=3cm]{geometry}
     \pagestyle{plain}
@@ -51,11 +50,14 @@
     \floatplacement{figure}{H}
     \floatplacement{table}{H}
 
+\usepackage{sectsty}
+\sectionfont{\large}
+
 \usepackage{titlesec}
 \titlespacing*{\chapter}{0pt}{-2\baselineskip}{1em}
 \titleformat{\chapter}[display]
-    {\normalfont\huge\bfseries\centering}
-    {\chaptertitlename\ \thechapter}{14pt}{\Huge}
+    {\normalfont\large\bfseries\centering}
+    {\chaptertitlename\ \thechapter}{14pt}{\large}
 
 \setlength\parindent{1.5cm}
 
@@ -74,7 +76,6 @@
 \newcommand{\mc}[1]{\boldmath{ \[ #1 \]}}
 
 \newcommand*{\leftblankpage}{%
-    %\vspace*{\fill}
     \begin{center}
         [\textit{Halaman ini sengaja dikosongkan.}]
     \end{center}
@@ -91,10 +92,17 @@
     \if@twocolumn\hbox{}\newpage\fi\fi\fi
 }
 
-\newcommand{\blankpage}{
+\newcommand{\emptypage}{
     \newpage
     \thispagestyle{empty}
     \mbox{}
+    \newpage
+}
+
+\newcommand{\plainpage}{
+    \newpage
+    \null
+    \thispagestyle{plain}
     \newpage
 }
 
@@ -106,6 +114,7 @@
 
 \newcommand{\addChapter}[1]{\phantomsection{} \addcontentsline{toc}{chapter}{#1}}
 
+\newcommand{\changeSize}[2]{\begingroup \fontsize{#1}{12pt}\selectfont \begin{center} \bo{#2} \end{center} \endgroup}
 % Change terms to indonesian
 
 \renewcommand{\bibname}{Daftar Pustaka}
